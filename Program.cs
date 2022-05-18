@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using PZ;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
+string connStr = "Host=localhost;Port=5432;Database=PZ;UserID=pzaccess;Password=ZAQ!2wsx";
+//string connStr = laodConnectionString(Configuration.GetConnectionString("DefaultConnection"),dbConnCrypt);
+// Add database connection
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connStr));
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 
 var app = builder.Build();
 
