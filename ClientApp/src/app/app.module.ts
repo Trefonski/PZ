@@ -9,6 +9,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
+import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashboard-tile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    AdminDashboardComponent,
+    AdminDashboardTileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,6 +30,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'admin-dashboard', component: AdminDashboardComponent }
     ])
   ],
   providers: [],
