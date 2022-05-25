@@ -1,44 +1,50 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">V1</a>
-      <button
-        class="navbar-toggler"
+
+  <nav class="navbar navbar-expand-md navbar-light justify-content-center first-navbar">
+    <a class="navbar-brand abs p-2" [routerLinkActive]="['link-active']" [routerLink]="['/home']">Nazwa Sklepu</a>
+    
+    <div class="btn-group ms-auto p-2" role="group" aria-label="Basic example">
+      <a type="button" class="btn btn-md btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj</a>
+      <a type="button" class="btn btn-md btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zarejestruj</a>
+      <a type="button" class="btn btn-md btn-2" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Koszyk</a>
+</div>
+</nav>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" 
         type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
+        data-bs-toggle="collapse"
+        data-bs-target="navbar-collapse" 
+        aria-label="Toggle navigation" 
         [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+        (click) ="toggle()"
+        >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown"
+        [ngClass] ="{ show: isExpanded }">
+        <ul class="navbar-nav second-nav-list">
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link active" [routerLink]="['/counter']">Kategoria1</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
+            <a class="nav-link active" [routerLink]="['/fetch-data']">Kategoria2</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
+            <a class="nav-link active" [routerLink]="['/#']">Kategoria3</a>
           </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link active" [routerLink]="['/admin-dashboard']">?panel admin? </a>
+          </li>
+      
         </ul>
+        
+      </div>
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Wyszukaj...">
+        <button class="btn btn-sm"><i class="fas fa-search"></i></button>
       </div>
     </div>
   </nav>
-</header>
+  </header>
