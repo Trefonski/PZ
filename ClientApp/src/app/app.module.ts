@@ -11,6 +11,14 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
 import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashboard-tile.component';
+import { SideNavMenuComponent } from './user-profile/side-nav-menu/side-nav-menu.component';
+import { UserAddAddressComponent } from './user-profile/sub-pages/user-add-address/user-add-address.component';
+import { UserAddressesComponent } from './user-profile/sub-pages/user-addresses/user-addresses.component';
+import { UserOrdersComponent } from './user-profile/sub-pages/user-orders/user-orders.component';
+import { UserReturnsComponent } from './user-profile/sub-pages/user-returns/user-returns.component';
+import { UserDataComponent } from './user-profile/sub-pages/user-data/user-data.component';
+import { CartComponent } from './cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +28,14 @@ import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashbo
     CounterComponent,
     FetchDataComponent,
     AdminDashboardComponent,
-    AdminDashboardTileComponent
+    AdminDashboardTileComponent,
+    SideNavMenuComponent,
+    UserAddressesComponent,
+    UserAddAddressComponent,
+    UserOrdersComponent,
+    UserDataComponent,
+    UserReturnsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +45,13 @@ import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashbo
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'admin-dashboard', component: AdminDashboardComponent }
+      { path: 'admin-dashboard', component: AdminDashboardComponent },
+      { path: 'addresses', component: UserAddressesComponent },
+      { path: 'add-addresses', component: UserAddAddressComponent },
+      { path: 'orders', component: UserOrdersComponent },
+      { path: 'user-data', component: UserDataComponent },
+      { path: 'returns', component: UserReturnsComponent },
+      { path: 'cart', component: CartComponent },
     ])
   ],
   providers: [],
