@@ -46,11 +46,11 @@ export class LoginComponent implements OnInit {
     const login = {...loginFormValue};
 
     const userForAuth: UserForAuthentication = {
-      email: login.username,
-      password: login.password
+      UserName: login.username,
+      Password: login.password
     }
 
-    this.authService.loginUser('api/accounts/login', userForAuth)
+    this.authService.loginUser('api/auth/login', userForAuth)
     .subscribe({
       next: (res:AuthResponse) => {
        localStorage.setItem("token", res.token);

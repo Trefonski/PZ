@@ -11,7 +11,12 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
 import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashboard-tile.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './shared/guards/auth.guard';
 
+export function tokenGetter():string {
+  return localStorage.getItem("token") || '';
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +29,21 @@ import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashbo
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        allowedDomains: [],
+        disallowedRoutes: [],
+        tokenGetter: tokenGetter
+      }      
+    }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'admin-dashboard', component: AdminDashboardComponent }
+      { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] }
     ])
   ],
   providers: [],
