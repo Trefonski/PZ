@@ -1,0 +1,27 @@
+<div class="row mt-4">
+  <div class="col-md-3 col-sm-5">
+  <app-side-nav></app-side-nav>
+  </div>
+
+  <div class="container col-md-9 col-sm-7">
+    <h1>Adresy</h1>
+    <p>Dodaj lub zmień adres</p>
+    <div class="row">
+      <button class="btn btn-add-address mt-2 ms-1 active" [routerLink]="['/add-address']" [routerLinkActive]="['link-active']">Dodaj adres</button>
+    </div>
+    <div class="row">
+        <div *ngFor="let addres of addresses" class="col-lg-3 mt-3 mx-2 border">
+          <strong>Adres zamieszkania</strong>
+          <br><br>
+          <!--
+          <p>{{ addresses.blockno }}</p>
+          <p>{{ addresses.houseno }}</p>
+          <p>{{ addresses.postcode }}</p>
+          <p>{{ addresses.city }}</p>
+          <p>{{ addresses.voivodeship }}</p>
+          <p>{{ addresses.country }}</p>
+          -->
+        </div> 
+      </div>
+    </div>
+</div>

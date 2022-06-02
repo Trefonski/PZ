@@ -1,0 +1,39 @@
+label{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.side-nav{
+  margin-bottom: 15px;
+}
+
+.side-nav-list > li > a {
+    font-size: 15px;
+    color: black;
+    margin-left: 10px;
+}
+
+.side-nav-list > li > a:active{
+    color: #055279;
+}
+
+li::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.side-nav-list > li > a:hover{
+    color: #0087ca;
+}
+.side-nav-list > li:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

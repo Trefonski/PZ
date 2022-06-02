@@ -1,15 +1,49 @@
 <header>
-
   <nav class="navbar navbar-expand-md navbar-light justify-content-center first-navbar">
-    <a class="navbar-brand abs p-2" [routerLinkActive]="['link-active']" [routerLink]="['/home']">Nazwa Sklepu</a>
+    <a class="navbar-brand abs p-2" [routerLinkActive]="['link-active']" [routerLink]="['/']">Nazwa Sklepu</a>
     
-    <div class="btn-group ms-auto p-2" role="group" aria-label="Basic example">
-      <a type="button" class="btn btn-md btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj</a>
-      <a type="button" class="btn btn-md btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zarejestruj</a>
-      <a type="button" class="btn btn-md btn-2" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Koszyk</a>
-</div>
-</nav>
-  
+    <div class="btn-group ms-auto p-2" role="group">
+      <div class="dropdown">
+        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj</button>
+          <div class="dropdown-content border">
+            <button class="btn btn-dropdown" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj się</button>
+            <p>Jesteś nowym klientem?</p>
+              <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zarejestruj się</a>
+
+              <div class="dropdown-divider"></div>
+
+              <ul>
+                <li [routerLinkActive]="['link-active']">
+                  <a class="active" [routerLink]="['/#']">Zamówienia</a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                  <a class="active" [routerLink]="['/#']">Moje dane</a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                  <a class="active" [routerLink]="['/#']">Moje adresy</a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                  <a class="active" [routerLink]="['/#']">Zwroty</a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                  <a class="active" [routerLink]="['/#']">Pomoc</a>
+                </li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Koszyk</button>
+          <div class="dropdown-content border">
+            <!--Przykład-->
+            <div class="container mt-3">
+              <h6>Twój koszyk jest pusty</h6>
+            </div>
+          </div>
+      </div>
+  </div>
+  </nav>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <button class="navbar-toggler" 
@@ -32,12 +66,11 @@
             <a class="nav-link active" [routerLink]="['/fetch-data']">Kategoria2</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link active" [routerLink]="['/#']">Kategoria3</a>
+            <a class="nav-link active" [routerLink]="['/addresses']">Kategoria3</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link active" [routerLink]="['/admin-dashboard']">?panel admin? </a>
           </li>
-      
         </ul>
         
       </div>
@@ -47,4 +80,4 @@
       </div>
     </div>
   </nav>
-  </header>
+</header>
