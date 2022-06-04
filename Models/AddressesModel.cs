@@ -5,6 +5,7 @@ namespace PZ.Models
     public class Addresses
     {
         public byte ID_Address {get; set;}
+        public uint ID_Client {get; set;}
         public bool Default {get; set;}
         public string City {get; set;}
         public string Voivodeship{get; set;}
@@ -14,7 +15,7 @@ namespace PZ.Models
         public ushort BlockNo {get; set;}
         public ushort HouseNo {get; set;}
 
-        //FK target
+        //FK
         [JsonIgnore]
         public Clients Clients {get; set;}
     }

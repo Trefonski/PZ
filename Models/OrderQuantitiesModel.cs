@@ -8,6 +8,6 @@ namespace PZ.Models
 
         //FK
         public Orders Orders {get; set;}
-        public Items Item {get; set;}
+        public Items Items {get; set;}
     }
 }
