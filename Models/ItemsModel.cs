@@ -9,7 +9,7 @@ namespace PZ.Models
         public string Style {get; set;} //https://en.wikipedia.org/wiki/List_of_shoe_styles
         public uint Stock {get; set;}
         public string ItemName {get; set;}
-        public Boolean Mens {get; set;}
+        public enum Sex {mens=1, womens=2, unisex=3, boy=4, girl=5, unisexChild=6}
 
         //FK
         public Brands Brands {get; set;}
