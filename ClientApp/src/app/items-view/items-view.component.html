@@ -1,0 +1,43 @@
+<div class="container row " style="padding-top: 2rem; padding-bottom:2rem">
+    <h1>Kategoria butów</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3 col-sm-12">
+        <app-items-nav></app-items-nav>
+    </div>
+
+  <div class="col-md-9 col-sm-12">
+
+    <div class="row" *ngIf="items">
+    
+        <div class="col-6 col-lg-4 col-md-4 col-xs-4 my-2" *ngFor="let item of items">
+
+            <div class="thumbnail-container m-1">
+                <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/item-details', item.ID_Item]">
+                    <img class="w-100" src="{{ item.Picture }}"/>
+                 </a>
+            <div class="row" style="padding-left: 10px;">
+                <p>{{ item.ItemName }}</p>  
+            </div>
+            <div class="row" style="padding-left: 10px;">
+
+                <div class="col-lg-9 col-md-7 col-sm-6">
+                    <p>{{item.Stock}}</p> 
+                 </div>
+
+                 <div class="col-lg-3 col-md-5 col-sm-6 ">
+                    <button type="button" class="btn btn-primary btn-square-md rounded-0 align-self-end add-to-cart" button-action="add-to-cart" type="submit">
+          
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                        </svg></button>
+                    </div>
+            </div>
+            </div>
+            
+        
+        </div>
+    </div>
+    </div>
+    </div>
