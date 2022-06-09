@@ -6,7 +6,12 @@ label{
 .side-nav{
   margin-bottom: 15px;
 }
-
+.side-nav-second{
+    display: none;
+}
+.side-nav-second > ul > li{
+    list-style-type: none;
+}
 .side-nav-list > li > a {
     font-size: 15px;
     color: black;
@@ -17,23 +22,16 @@ label{
     color: #055279;
 }
 
-li::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
 .side-nav-list > li > a:hover{
     color: #0087ca;
 }
-.side-nav-list > li:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+@media screen and (max-width: 768px) {
+  .side-nav{
+    display: none;
+  }
+  .side-nav-second{
+     display: inline-block;
+
+  }
+
+  }
