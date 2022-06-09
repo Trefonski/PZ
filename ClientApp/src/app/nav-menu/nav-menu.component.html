@@ -4,7 +4,7 @@
     
     <div class="btn-group ms-auto p-2" role="group">
       <div class="dropdown">
-        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj</button>
+        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/user-data']">Profil</button>
           <div class="dropdown-content border">
             <button class="btn btn-dropdown" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj się</button>
             <p>Jesteś nowym klientem?</p>
@@ -14,16 +14,16 @@
 
               <ul>
                 <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/#']">Zamówienia</a>
+                  <a class="active" [routerLink]="['/orders']">Zamówienia</a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/#']">Moje dane</a>
+                  <a class="active" [routerLink]="['/user-data']">Moje dane</a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/#']">Moje adresy</a>
+                  <a class="active" [routerLink]="['/addresses']">Moje adresy</a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/#']">Zwroty</a>
+                  <a class="active" [routerLink]="['/returns']">Zwroty</a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
                   <a class="active" [routerLink]="['/#']">Pomoc</a>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Koszyk</button>
+        <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/cart']">Koszyk</button>
           <div class="dropdown-content border">
             <!--Przykład-->
             <div class="container mt-3">
@@ -60,13 +60,141 @@
         [ngClass] ="{ show: isExpanded }">
         <ul class="navbar-nav second-nav-list">
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link active" [routerLink]="['/counter']">Kategoria1</a>
+            <a class="nav-link active" [routerLink]="['/items']">Damskie</a>
+            <div class="menu-sub">
+              
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria1</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>            
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria2</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria3</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria4</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link active" [routerLink]="['/items']">Męskie</a>
+            <div class="menu-sub">
+              
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria1</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>            
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria2</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria3</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria4</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link active" [routerLink]="['/fetch-data']">Kategoria2</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link active" [routerLink]="['/addresses']">Kategoria3</a>
+            <a class="nav-link active" [routerLink]="['/items']">Dziecięce</a>
+            <div class="menu-sub">
+              
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria1</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>            
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria2</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+    
+              <div class="menu-col-1">
+                <h3 class="menu-category">Kategoria3</h3>
+                <ul>
+                  <li><a href="">Link 01</a></li>
+                  <li><a href="">Link 02</a></li>
+                  <li><a href="">Link 03</a></li>
+                  <li><a href="">Link 04</a></li>
+                  <li><a href="">Link 05</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link active" [routerLink]="['/admin-dashboard']">?panel admin? </a>
@@ -76,8 +204,13 @@
       </div>
       <div class="input-group">
         <input class="form-control" type="text" placeholder="Wyszukaj...">
-        <button class="btn btn-sm"><i class="fas fa-search"></i></button>
+        <button class="btn btn-sm bg-dark"><i class="fas fa-search"></i></button>
       </div>
     </div>
   </nav>
 </header>
+
+
+
+
+      

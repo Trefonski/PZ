@@ -1,16 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
 *{
-  font-family: Arial;
+  font-family: 'Work Sans', sans-serif;
   text-decoration: none;
+  box-sizing: border-box;
 }
+
+.navbar-toggler-icon {
+  border-color: #000;
+  
+}
+
 p{
   font-size: 13px;
   margin: 0;
   padding: 0;
 }
 
+header{
+  background: #5cc4a1;
+  color: #222;
+}
+
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 18px;
@@ -46,44 +61,30 @@ html {
 }
 
 .btn-1:hover{
-  background:#528eac;
+  background:#318a6c;
   transform:translateY(-3px);
   color:#fff;
 }
 
 .second-nav-list{
-  padding-left: 0px;
-
-}
-.second-nav-list > li{
-  font-size: 17px;
-  margin-left: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  width: 130px;
-}
-.second-nav-list > li::after{
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.second-nav-list > li > a:hover{
-  color: #0087ca;
-}
-.second-nav-list > li:hover::after{
-  transform: scaleX(1);
-  transform-origin: bottom left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+.second-nav-list > a{
+  display: block;
+  text-decoration: none;
+  padding: .75em 1.75em;
+}
+
+.second-nav-list > li:hover{
+  color: #39ca00;
+}
+
+.second-nav-list > li > a{
+  color: #222;
+}
 
 .form-inputs{
   position:relative;
@@ -129,7 +130,7 @@ inputs .form-control{
   text-decoration: underline;
   font-size: 14px;
   margin: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 16px;
   display: block;
   color: #0087ca;
 }
@@ -175,4 +176,102 @@ inputs .form-control{
   color: #0087ca;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.menu-sub {
+  margin-top: 10px;
+  position: absolute;
+  left: 0;
+  background: #444;
+  width: 100%;
+  color: #fff;
+  padding: 32px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+nav li:hover .menu-sub {
+  position: absolute;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-sub li {
+  display: block;
+}
+
+.menu-sub a {
+  padding: 0;
+  margin-bottom: .35em;
+  color: rgb(218, 203, 203);
+}
+
+.menu-sub a:hover {
+  text-decoration: underline;
+}
+
+.menu-category {
+  margin: 2.5em 0 .5em;
+}
+
+.menu-category:first-of-type {
+  margin-top: 0;
+}
+
+.menu-col-1,
+.menu-col-2,
+.menu-col-3,
+.menu-col-4 {
+  float: left;
+}
+
+.menu-col-1 {
+  width: 25%;
+}
+
+.menu-col-2 {
+  width: 50%;
+}
+
+
+.second-nav-list > li{
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 130px;
+}
+
+
+.second-nav-list > li::after{
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.second-nav-list > li > a:hover{
+  color: #6e93a5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media screen and (max-width: 991px) {
+
+  menu-sub {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  nav li:hover .menu-sub {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
 }
