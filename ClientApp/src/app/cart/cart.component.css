@@ -1,0 +1,50 @@
+select{
+    width: 50px;
+    height: 30px;
+}
+.cart-item p{
+    margin: 2px;
+}
+.summary-container{
+    padding: 20px;
+}
+.cont{
+    padding: 20px;
+}
+
+ h4{
+    margin-bottom: 30px;
+}
+
+.alignleft{
+    float: left;
+}
+
+.alignright{
+    float: right;
+}
+.checkout{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    border: none;
+    min-height: 40px;
+    font-weight: 500;
+}
+
+.checkout:hover{
+    background-color: #528eac;
+}
+.cart-container{
+    background-color: rgb(238, 238, 238);
+    
+}
+.cart-items-container{
+    background-color: aliceblue;
+}
+.cart-container table thead{
+    font-weight: 600;
+}
+.cart-container table thead td{
+    background-color: #59ab6e ;
+}

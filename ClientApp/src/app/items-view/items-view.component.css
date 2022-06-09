@@ -1,0 +1,36 @@
+@media (max-width: 767px) {
+    .btn-square-md {
+      display: none;
+    } 
+}
+
+a{
+  text-decoration: none; 
+}
+
+.price-div{
+  padding-left: 0;
+}
+
+.btn-square-md {
+    width: 41px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: rgb(34, 32, 32);
+    height: 41px;
+    text-align: center;
+    font-size:12px;
+    }
+    
+.btn-square-md:hover{
+    background:#528eac;
+}
+
+.thumbnail-container{
+  transition: transform 0.4s;
+}
+.thumbnail-container:hover{
+  box-shadow:0px 8px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  
+}

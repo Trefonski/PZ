@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -19,8 +18,11 @@ import { UserAddressesComponent } from './user-profile/sub-pages/user-addresses/
 import { UserOrdersComponent } from './user-profile/sub-pages/user-orders/user-orders.component';
 import { UserReturnsComponent } from './user-profile/sub-pages/user-returns/user-returns.component';
 import { UserDataComponent } from './user-profile/sub-pages/user-data/user-data.component';
-//import { CartComponent } from './cart/cart.component';
-
+import { ItemsNavComponent } from './items-view/items-nav/items-nav.component';
+import { ItemsViewComponent } from './items-view/items-view.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
+import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function tokenGetter():string {
   return localStorage.getItem("token") || '';
@@ -40,7 +42,11 @@ export function tokenGetter():string {
     UserOrdersComponent,
     UserDataComponent,
     UserReturnsComponent,
-    //CartComponent,
+    ItemsNavComponent,
+    ItemsViewComponent,
+    ItemDetailsComponent,
+    CartComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -59,12 +65,14 @@ export function tokenGetter():string {
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
-      { path: 'addresses', component: UserAddressesComponent },
-      { path: 'add-addresses', component: UserAddAddressComponent },
-      { path: 'orders', component: UserOrdersComponent },
-      { path: 'user-data', component: UserDataComponent },
+      { path: 'addresses', component: UserAddressesComponent, canActivate: [AuthGuard]},
+      { path: 'add-addresses', component: UserAddAddressComponent, canActivate: [AuthGuard]},
+      { path: 'orders', component: UserOrdersComponent, canActivate: [AuthGuard] },
+      { path: 'user-data', component: UserDataComponent, canActivate: [AuthGuard] },
+      { path: 'items', component: ItemsViewComponent },
+      { path: 'item-details/:id', component: ItemDetailsComponent },
       //{ path: 'returns', component: UserReturnsComponent },
-      //{ path: 'cart', component: CartComponent },
+      { path: 'cart', component: CartComponent },
     ])
   ],
   providers: [],

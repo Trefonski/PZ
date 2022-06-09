@@ -1,4 +1,5 @@
 import { Component, Inject, Input } from '@angular/core';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-user-orders',
@@ -7,5 +8,11 @@ import { Component, Inject, Input } from '@angular/core';
 
 })
 export class UserOrdersComponent {
+  isLogged = false;
+
+  constructor(private authService: AuthenticationService){
+    this.isLogged = this.authService.isUserAuthenticated();
+  }
+
 
 }

@@ -12,6 +12,21 @@ label{
 .side-nav-second > ul > li{
     list-style-type: none;
 }
+.side-nav-second > ul > li > button{
+    list-style-type: none;
+    display: flex;
+    max-height: 50px;
+    background-color: black;
+ 
+}
+.side-nav-second > ul > li> button:hover{
+    background-color: #0087ca;
+   
+}
+.side-nav-second > ul > li > a{
+    color: azure;
+}
+
 .side-nav-list > li > a {
     font-size: 15px;
     color: black;
@@ -31,7 +46,6 @@ label{
   }
   .side-nav-second{
      display: inline-block;
-
   }
 
   }

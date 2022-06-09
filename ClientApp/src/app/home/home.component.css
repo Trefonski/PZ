@@ -1,0 +1,138 @@
+
+a{
+    text-decoration: none;
+}
+
+  .hero-banner{
+        background-color: #d2ced6;
+          color: white;
+          font-weight: 600;
+          width: 100vw;
+          height: 57vh;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          margin-bottom: 50px;
+          background-image: url(https://static.shiekh.com/media/gene-cms/n/i/nike-billboard-full_2__2560x1044.jpg);
+          background-image: no-repeat;
+          background-size: 100% auto;
+      }
+    @media screen and (max-width: 1080px) {
+        .hero-banner{
+            height: 40vh;
+            background-image: url(https://static.shiekh.com/media/gene-cms/n/i/nike-smbanner-full_1__1260x800.jpg);
+            background-image: no-repeat;
+            background-size: 100% auto;
+        }
+        .hero-banner .hero-container h1{
+            font-size: 40px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+        }
+      p{
+          color: white;
+          font-weight: 500;
+      }
+      .row{
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+      .hero-container{
+        
+         margin-left: 50px;
+          float: left;
+          
+      }
+      .hero-container img{
+          max-width: 100%;
+          padding: 50px 0; 
+      }
+      .hero-container h1{
+          font-size: 50px;
+          line-height: 60px;
+          margin: 25px 0;
+      }
+      .btn-hero{
+          display: inline-block;
+          background: black;
+          color: white;
+          padding: 8px 30px;
+          margin: 30px 0;
+          border-radius: 30px;
+      }
+     .btn-hero:hover{
+        background-color: #528eac;
+     }
+  
+      
+      .small-container{
+          margin: auto;
+          padding-left: 25px;
+          padding-right: 25px;
+      }
+      .catgories{
+          margin:70px 0;
+      }
+      .col-3{
+          flex-basis: 30%;
+          min-width: 250px;
+          margin-bottom: 30px;
+      }
+      .col-3 img{
+        width: 100%;
+      }
+      .title{
+          text-align: center;
+          margin: 0 auto 80px;
+          position: relative;
+          line-height: 60px;
+          color:#555;
+      }
+      h4{
+          margin-top: 5px;
+          color: #555;
+          font-weight: normal;
+          margin-left: 5px;
+      }
+      h5{
+          color: #555;
+          font-weight: normal;
+          margin-left: 5px;
+      }
+  
+      .col-4{
+          flex-basis: 25%;
+          font-size: 14px;
+          padding: 10px;
+          min-width: 200px;
+          margin-bottom: 50px;
+      }
+      .col-4 img{
+          width: 100%
+      }
+      .col-5{
+          margin-bottom: 20px;
+      }
+
+
+      .banners {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        width: 120px;
+    }
+    .banners img{
+        background-color: grey;
+    }
+    .image-caption {
+        display: block;
+        color: black;
+    }
+    .image-caption:hover{
+        color: #555;
+    }
