@@ -1,0 +1,91 @@
+[
+   
+    {   
+        "ID_Item": 1,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "Sneakers",
+        "Stock": 203.99,
+       "ItemName": "Sneakersy Camper",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/0/0/0000209198102_01_rz.jpg"
+    },
+    {   
+        "ID_Item": 2,
+        "ID_Brand": 3,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "sneakers",
+        "Stock": 203.99,
+       "ItemName": "Trampki Camper",
+  
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/image/650x650/0/0/0000209198294_01_rz_1.jpg"
+    },
+    {   
+        "ID_Item": 3,
+        "ID_Brand": 1,
+        "Size": 44,
+        "Colour": "white",
+        "Style": "shoes",
+        "Stock": 204.00,
+       "ItemName": "Buty Addidas",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/0/0000206693594_01_jc.jpg"
+    },
+    {   
+        "ID_Item": 4,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "white",
+        "Style": "shoes",
+        "Stock": 220.00,
+       "ItemName": "Buty Reebok",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/1/01_0000209518221_is.jpg"
+    },
+    {   
+        "ID_Item": 5,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "gym shoe",
+        "Stock": 290.00,
+       "ItemName": "Trampki CONVERSE",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/0/0000009160002_ts_1_.jpg"
+    },
+    {   
+        "ID_Item": 6,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "gym shoe",
+        "Stock": 20,
+       "ItemName": "Trampki CONVERSE",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/0/0000076522222_1__1.jpg"
+    },
+    {   
+        "ID_Item": 7,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "sneakers",
+        "Stock": 20,
+       "ItemName": "Sneakersy New Balance",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/0/0000200369334_01_rz.jpg"
+    },
+    {   
+        "ID_Item": 8,
+        "ID_Brand": 2,
+        "Size": 44,
+        "Colour": "black",
+        "Style": "shoes",
+        "Stock": 20,
+       "ItemName": "Buty Addidas",
+
+        "Picture": "https://www.eobuwie.com.pl/media/catalog/product/cache/small_image/300x300/0/0/0000206712011_01__wj_1.jpg"
+    }
+]
