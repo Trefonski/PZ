@@ -40,7 +40,12 @@ namespace PZ
                 .OnDelete(DeleteBehavior.Restrict);
                 builder.Entity<Clients>().HasMany(t => t.Orders)
                 .WithOne(d => d.Clients)
-                .OnDelete(DeleteBehavior.Restrict);                
+                .OnDelete(DeleteBehavior.Restrict);
+                builder.Entity<Clients>().HasOne(t => t.AppUser)
+                .WithOne(d => d.Clients)
+                .HasPrincipalKey<Clients>(t => t.Login)
+                .HasForeignKey<AppUser>(t => t.UserName)
+                .OnDelete(DeleteBehavior.Restrict);    
             #endregion
 
             #region Orders
@@ -97,9 +102,9 @@ namespace PZ
                 builder.Entity<Items>().HasMany(t => t.Pictures)
                 .WithOne(d => d.Items)
                 .OnDelete(DeleteBehavior.Restrict);
-                builder.Entity<Items>().HasOne<Brands>(t => t.Brands) //https://www.entityframeworktutorial.net/efcore/configure-one-to-one-relationship-using-fluent-api-in-ef-core.aspx
+                builder.Entity<Items>().HasOne(t => t.Brands) //https://www.entityframeworktutorial.net/efcore/configure-one-to-one-relationship-using-fluent-api-in-ef-core.aspx
                 .WithOne(d => d.Items)
-                .HasForeignKey<Brands>(t => t.ID_Brand)
+                .HasForeignKey<Items>(t => t.ID_Brand)
                 .HasConstraintName("FK_Items_Brands")
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
@@ -136,9 +141,9 @@ namespace PZ
 
             #region Brands
                 builder.Entity<Brands>().HasKey(t => t.ID_Brand);
-                builder.Entity<Brands>().HasOne(t => t.Items)
-                .WithOne(d => d.Brands)
-                .OnDelete(DeleteBehavior.Restrict);
+                //builder.Entity<Brands>().HasOne(t => t.Items)
+                //.WithOne(d => d.Brands)
+                //.OnDelete(DeleteBehavior.Restrict);
             #endregion
         }
 
