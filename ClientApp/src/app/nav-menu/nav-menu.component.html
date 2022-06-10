@@ -5,31 +5,32 @@
     <div class="btn-group ms-auto p-2" role="group">
       <div class="dropdown">
         <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/user-data']">Profil</button>
-          <div class="dropdown-content border">
-            <button class="btn btn-dropdown" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zaloguj się</button>
+        <div class="dropdown-content border">
+          <section *ngIf="!isLogged">
+            <button class="btn btn-dropdown" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/login']">Zaloguj się</button>
             <p>Jesteś nowym klientem?</p>
-              <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/#']">Zarejestruj się</a>
+            <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/register']">Zarejestruj się</a>
+          </section>
+          <div class="dropdown-divider"></div>
 
-              <div class="dropdown-divider"></div>
-
-              <ul>
-                <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/orders']">Zamówienia</a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/user-data']">Moje dane</a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/addresses']">Moje adresy</a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/returns']">Zwroty</a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                  <a class="active" [routerLink]="['/#']">Pomoc</a>
-                </li>
-              </ul>
-          </div>
+          <ul>
+            <li [routerLinkActive]="['link-active']">
+              <a class="active" [routerLink]="['/orders']">Zamówienia</a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+              <a class="active" [routerLink]="['/user-data']">Moje dane</a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+              <a class="active" [routerLink]="['/addresses']">Moje adresy</a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+              <a class="active" [routerLink]="['/returns']">Zwroty</a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+              <a class="active" [routerLink]="['/#']">Pomoc</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="dropdown">
