@@ -4,6 +4,7 @@ using PZ.Models;
 
 namespace PZ.Controllers
 {
+    [Route("[controller]")]
     public class ItemsController : Controller
     {
         private readonly AppDbContext _context;
@@ -81,7 +82,7 @@ namespace PZ.Controllers
             }
             catch(Exception e)
             {
-                Console.WriteLine($"ItemsController:Cannot insert:{e.ToString()}")
+                Console.WriteLine($"ItemsController:Cannot insert:{e.ToString()}");
                 return BadRequest("Zapis do bazy danych nie powiódł się!");
             }            
 
