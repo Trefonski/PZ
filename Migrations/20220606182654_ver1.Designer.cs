@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PZ;
@@ -11,9 +12,10 @@ using PZ;
 namespace V1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220606182654_ver1")]
+    partial class ver1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -259,9 +261,6 @@ namespace V1.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("UserName")
-                        .IsUnique();
-
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
@@ -319,9 +318,6 @@ namespace V1.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Sex")
-                        .HasColumnType("integer");
-
                     b.Property<float>("Size")
                         .HasColumnType("real");
 
@@ -354,12 +350,14 @@ namespace V1.Migrations
                     b.Property<long>("ID_Order")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
+                    b.Property<byte>("ID_Status")
+                        .HasColumnType("smallint");
 
                     b.HasKey("ID_Date");
 
                     b.HasIndex("ID_Order");
+
+                    b.HasIndex("ID_Status");
 
                     b.ToTable("OrderDates");
                 });
@@ -438,9 +436,6 @@ namespace V1.Migrations
                     b.Property<DateTime>("DatePosted")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
@@ -450,6 +445,16 @@ namespace V1.Migrations
                     b.HasIndex("ID_Item");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("PZ.Models.Status", b =>
+                {
+                    b.Property<byte>("ID_Status")
+                        .HasColumnType("smallint");
+
+                    b.HasKey("ID_Status");
+
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -515,17 +520,6 @@ namespace V1.Migrations
                     b.Navigation("Clients");
                 });
 
-            modelBuilder.Entity("PZ.Models.AppUser", b =>
-                {
-                    b.HasOne("PZ.Models.Clients", "Clients")
-                        .WithOne("AppUser")
-                        .HasForeignKey("PZ.Models.AppUser", "UserName")
-                        .HasPrincipalKey("PZ.Models.Clients", "Login")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Clients");
-                });
-
             modelBuilder.Entity("PZ.Models.Items", b =>
                 {
                     b.HasOne("PZ.Models.Brands", "Brands")
@@ -547,7 +541,16 @@ namespace V1.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_OrderDates_Orders");
 
+                    b.HasOne("PZ.Models.Status", "Status")
+                        .WithMany("OrderDates")
+                        .HasForeignKey("ID_Status")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_OrderDates_Status");
+
                     b.Navigation("Orders");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("PZ.Models.OrderQuantities", b =>
@@ -626,9 +629,6 @@ namespace V1.Migrations
                 {
                     b.Navigation("Addresses");
 
-                    b.Navigation("AppUser")
-                        .IsRequired();
-
                     b.Navigation("Orders");
 
                     b.Navigation("Reviews");
@@ -648,6 +648,11 @@ namespace V1.Migrations
                     b.Navigation("OrderDates");
 
                     b.Navigation("OrderQuantities");
+                });
+
+            modelBuilder.Entity("PZ.Models.Status", b =>
+                {
+                    b.Navigation("OrderDates");
                 });
 #pragma warning restore 612, 618
         }

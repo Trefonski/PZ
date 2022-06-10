@@ -65,11 +65,6 @@ namespace PZ
 
             #region OrderDates
                 builder.Entity<OrderDates>().HasKey(t => t.ID_Date);
-                builder.Entity<OrderDates>().HasOne(t => t.Status)
-                .WithMany(d => d.OrderDates)
-                .HasForeignKey(t => t.ID_Status)
-                .HasConstraintName("FK_OrderDates_Status")
-                .OnDelete(DeleteBehavior.Restrict);
                 builder.Entity<OrderDates>().HasOne(t => t.Orders)
                 .WithMany(d => d.OrderDates)
                 .HasForeignKey(t => t.ID_Order)
@@ -109,13 +104,6 @@ namespace PZ
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
 
-            #region Status
-                builder.Entity<Status>().HasKey(t => t.ID_Status);
-                builder.Entity<Status>().HasMany(t => t.OrderDates)
-                .WithOne(d => d.Status)
-                .OnDelete(DeleteBehavior.Restrict);
-            #endregion
-
             #region Reviews
                 builder.Entity<Reviews>().HasKey(t => new {t.ID_Client, t.ID_Item});
                 builder.Entity<Reviews>().HasOne(t => t.Clients)
@@ -152,7 +140,6 @@ namespace PZ
         public DbSet<Orders> Orders {get; set;}
         public DbSet<OrderDates> OrderDates {get; set;}
         public DbSet<OrderQuantities> OrderQuantities {get; set;}
-        public DbSet<Status> Status {get; set;}
         public DbSet<Reviews> Reviews {get; set;}
         public DbSet<Items> Items {get; set;}
         public DbSet<Pictures> Pictures {get; set;}
