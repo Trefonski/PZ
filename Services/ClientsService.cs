@@ -11,7 +11,7 @@ namespace PZ.Services
             _context = context;
         }
 
-        public async Task<ActionResult> InsertClient(string UserName)
+        public async Task<ActionResult> InsertClient(string UserName,string ClientName)
         {
             if(String.IsNullOrWhiteSpace(UserName))
             {
@@ -20,7 +20,7 @@ namespace PZ.Services
 
             Clients client = new Clients();
 
-            client.ClientName = UserName;
+            client.ClientName = ClientName;
             client.ID_Client = _context.Clients.OrderByDescending(x => x.ID_Client).Select(x => x.ID_Client).FirstOrDefault() + 1;
             client.Login = UserName;
 

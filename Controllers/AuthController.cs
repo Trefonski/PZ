@@ -63,20 +63,25 @@ namespace PZ.Controllers
 
         [AllowAnonymous]
         [HttpPost("registration")] 
-        public async Task<IActionResult> RegisterUser([FromBody] LoginModel userForRegistration) 
+        public async Task<IActionResult> RegisterUser([FromBody] RegistrationModel userForRegistration) 
         {
-            if (userForRegistration == null || !ModelState.IsValid) 
+            if(userForRegistration == null || !ModelState.IsValid) 
             {
                 return BadRequest(); 
             }
+
+            if(!userForRegistration.Password.Equals(userForRegistration.ConfirmPassword))
+            {
+                return BadRequest("Wprowadzone hasła nie są identyczne!");
+            }
                     
-            var client = await _clientsService.InsertClient(userForRegistration.UserName);
+            var client = await _clientsService.InsertClient(userForRegistration.UserName,$"{userForRegistration.FirstName} {userForRegistration.LastName}");
 
             var user = new AppUser { UserName = userForRegistration.UserName, Email = userForRegistration.UserName };
 
             var result = await _userManager.CreateAsync(user, userForRegistration.Password); 
             
-            if (!result.Succeeded) 
+            if(!result.Succeeded) 
             { 
                 var errors = result.Errors.Select(e => e.Description); 
                         
