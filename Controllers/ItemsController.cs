@@ -37,21 +37,25 @@ namespace PZ.Controllers
             return orders;
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsAllJson()
         {
             return Json(await GetItems());
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsBySexJson(Items.SexType Sex)
         {
             return Json(await GetItems(Sex));
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsBySexAndStyleJson(Items.SexType Sex,string Style)
         {
             return Json(await GetItems(Sex,Style));
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetSingleItemJson(string ID_Item)
         {
             return Json((await GetItems(0,"",ID_Item)).FirstOrDefault());
