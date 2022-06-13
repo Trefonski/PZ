@@ -4,7 +4,6 @@ using PZ.Models;
 
 namespace PZ.Controllers
 {
-    [Route("[controller]")]
     public class ItemsController : Controller
     {
         private readonly AppDbContext _context;
