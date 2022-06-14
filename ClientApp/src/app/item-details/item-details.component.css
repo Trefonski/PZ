@@ -24,3 +24,37 @@
     display: block;
     padding: 5px 10px;
 }
+.alignleft{
+    float: left;
+}
+
+.alignright{
+    float: right;
+}
+p{
+    color: black;
+}
+i{
+    font-size: 25px;
+    margin-right: 15px;
+}
+.small-container{
+    margin-top:200px;
+    margin-bottom: 200px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .similar-products{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .title{
+      text-align: center;
+      margin: 0 auto 80px;
+      position: relative;
+      line-height: 60px;
+      color:#555;
+  }
