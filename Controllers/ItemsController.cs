@@ -29,6 +29,7 @@ namespace PZ.Controllers
             if(String.IsNullOrWhiteSpace(ID_Item))
             {
                 query = query.Where(x => x.ID_Item.Equals(ID_Item));
+                query = query.Include(x => x.Pictures);
             }
 
             List<Items> orders = await query.ToListAsync();
