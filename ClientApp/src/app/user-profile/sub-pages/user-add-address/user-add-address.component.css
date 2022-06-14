@@ -13,44 +13,44 @@
 .row{
  align-items: flex-start;
 }
+ .btn-delete-address{
+      color: white;
+      background-color: black;
+      
+    }
+    .btn-delete-address:hover{
+      background-color: #444749;
+    }
+    .btn-edit-address{
+      color: white;
+      background-color: black;
+      
+    }
+    .btn-edit-address:hover{
+      background-color: #528eac;
+    }
 
-.card{
-
+  .form-control{
+  padding:10px;
+  border:2px solid;
 }
-.btn-delete-address{
-  color: white;
-  background-color: black;
-  
-}
-.btn-delete-address:hover{
-  background-color: #444749;
-}
-.btn-edit-address{
-  color: white;
-  background-color: black;
-  
-}
-.btn-edit-address:hover{
-  background-color: #528eac;
-}
-
-.form-control{
-padding:10px;
-border:2px solid;
-
+.form-control:focus{
+  box-shadow: 0px 5px 2px 4px #5cc4a1;
 }
 .form-group > label{
-padding-left: 5px;
-padding-right: 5px;
-position:relative;
-top:12px;
-left:20px;
-background-color:white;
+  padding-left: 5px;
+  padding-right: 5px;
+  position:relative;
+  top:12px;
+  left:20px;
+  background-color:white;
 }
+
+
 .form-check-input{
-border-radius: 0;
-border-style: solid;
-border-color: black;
-border-width: 2px;
-box-shadow: none;
+  border-radius: 0;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  box-shadow: none;
 }
