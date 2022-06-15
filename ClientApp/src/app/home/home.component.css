@@ -8,7 +8,7 @@ a{
           color: white;
           font-weight: 600;
           width: 100vw;
-          height: 57vh;
+          height: 50vh;
           position: relative;
           left: 50%;
           right: 50%;
@@ -21,7 +21,7 @@ a{
       }
     @media screen and (max-width: 1080px) {
         .hero-banner{
-            height: 40vh;
+            height: 32vh;
             background-image: url(https://static.shiekh.com/media/gene-cms/n/i/nike-smbanner-full_1__1260x800.jpg);
             background-image: no-repeat;
             background-size: 100% auto;
