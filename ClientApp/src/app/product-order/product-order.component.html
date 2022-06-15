@@ -1,0 +1,201 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-8 col-md-12">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 ">
+                                
+                <div class="card p-3 mt-4">
+                    <h4>Dane zamawiającego</h4>
+                    <hr>
+                    <button class="btn btn-dropdown mb-3" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/login']">Zaloguj się</button>
+
+                    
+                    <div class="form-group">
+                        <label>Adres e-mail</label>
+                        <input class="form-control input-lg" />
+                    </div>
+                    
+            
+            
+                    <div class="form-group">
+                        <label>Imię</label>
+                        <input type="text" class="form-control input-lg" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Nazwisko</label>
+                        <input class="form-control input-lg" />
+                    </div>
+
+            
+
+                    <div class="form-group">
+                        <label>Tel. komórkowy</label>
+                        <input type="text" class="form-control input-lg" value="+48" />
+                    </div>
+
+
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div class="form-group ">
+                            <label>Numer bloku</label>
+                            <input class="form-control input-lg" />
+                        </div>
+                    </div>
+            
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Number domu</label>
+                            <input type="text" class="form-control input-lg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Ulica</label>
+                            <input class="form-control input-lg" />
+                        </div>
+                    </div>
+            
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Miasto</label>
+                            <input type="text" class="form-control input-lg" />
+                        </div>
+                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Województwo</label>
+                    <input class="form-control input-lg" />
+                </div>
+
+
+
+                <div class="form-group mb-5">
+                    <label>Kraj</label>
+                    <input type="text" class="form-control input-lg" value="+48" />
+                 </div>
+                
+
+                
+
+                </div>
+                </div>
+                            
+                <div class="col-md-6 col-sm-12">
+                    <div class="card p-3 mt-4">
+
+                    <h4>Metoda platności</h4>
+                    <hr>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1"><img class="me-1" width=13% src="https://poland.payu.com/wp-content/uploads/sites/14/2020/05/PAYU_LOGO_LIME-990x640.png">
+                            Szybki przelew
+                        </label>
+                        <hr>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1"><img class="mb-1 me-1" width=13% src="https://www.tanie-konto.pl/wp-content/uploads/blik.png">
+                            BLIK
+                        </label>
+                        <hr>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2"><img class="me-1" width="12%" src="https://cdn-icons-png.flaticon.com/512/62/62780.png">
+                        Płatność kartą
+                        </label>
+                        <hr>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2"><img class="me-1" width="11%" src="https://manito.pl/data/include/cms/ikony-CMS/za_pobraniem.jpg">
+                        Płatność przy odbiorze
+                    </label>
+                    <hr>
+                    </div>
+                </div>
+
+                <div class="card p-3 mt-4">
+
+                    <h4>Metoda dostawy</h4>
+                    <hr>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Kurier
+                        </label>
+                        <p class="alignright">za darmo</p>
+                        <div style="clear: both;"></div> 
+                        <hr>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        Paczkomat
+                        </label>
+                        <p class="alignright">za darmo</p>
+                        <div style="clear: both;"></div> 
+                        <hr>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Odbiór w sklepie
+                    </label>
+                    <p class="alignright">za darmo</p>
+                        <div style="clear: both;"></div> 
+                    <hr>
+                    </div>
+                </div>
+
+                </div>
+                </div>
+            </form>
+            </div>
+
+        
+
+        <div class="col-lg-4">
+            <div class="card p-3 mt-4">
+                <h4>Podsumowanie</h4>
+                <hr>
+                <a [routerLinkActive]="['link-active']" [routerLink]="['/cart']">Wróć do koszyka</a>
+
+                        
+                <h5 class="mt-4">Do zapłaty</h5>
+                <div>
+                    <p class="alignleft">Wartość produktów</p>
+                    <p class="alignright">--cena--</p><br>
+                </div>
+                <div style="clear: both;"></div> 
+                <div>
+                    <p class="alignleft">Przesyłka</p>
+                    <p class="alignright">--cena--</p><br>
+                </div>
+
+                <div style="clear: both;"><hr></div> 
+
+                <div>
+                    <strong class="alignleft">Do zapłaty (w tym VAT)</strong>
+                    <strong class="alignright">--cena--</strong>
+                </div>
+
+
+                <button class="btn btn-submit m-1 mb-2 active btn-square-md w-100 rounded-2 mt-3" type="submit">ZAMAWIAM I PŁACĘ</button>
+           
+
+            </div>
+        </div>
+    </div>
+</div>

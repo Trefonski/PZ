@@ -1,0 +1,61 @@
+.form-control:focus{
+    box-shadow: 0px 5px 2px 4px #5cc4a1;
+  }
+  .form-group > label{
+    padding-left: 5px;
+    padding-right: 5px;
+    position:relative;
+    top:12px;
+    left:20px;
+    background-color:white;
+  }
+  
+
+  .form-check-input{
+
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    box-shadow: none;
+  }
+  .form-control{
+    padding:10px;
+    border:2px solid;
+  }
+  .btn-dropdown{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #0087ca;
+    min-height: 30px;
+    min-width: 230px;
+  }
+  .btn-dropdown:hover{
+    background-color: #719db3;
+  }
+  .alignleft{
+    float: left;
+}
+
+.alignright{
+    float: right;
+}
+a{
+    color: #5cc4a1;
+    text-underline-offset: 2px;
+}
+.btn-submit{
+color: white;
+background-color: black;
+font-weight: 400;
+font-size: 13px;
+
+}
+.btn-submit:hover{
+
+background-color: #528eac;
+}
+
+i{
+    font-size: 25px;
+}
