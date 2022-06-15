@@ -1,8 +1,9 @@
-<div class="cart-container border">
+<div class="cart-container card">
    <div class="cart-items-container row m-4">
-     <div class="cont col-lg-8">
+     <div class="cont card col-lg-8">
          <h4>Koszyk</h4>
         <div class="row">
+
             <div class="cart-item mt-2 col-12">
                 <div class="row">
                     <div class="col-3">
@@ -12,11 +13,11 @@
                         <p>--marka--</p>
                         <p>--nazwa--</p>
                         <p>--rozmiar--</p>
-                        <button class="btn btn-sm mt-3 border">usuń</button>
+                        <button class="btn btn-sm mt-3 bg-light"><i class="bi bi-trash3"></i> usuń</button>
                     </div>
 
                     <div class="col-3">
-                        <select class="alignright">
+                        <select class="alignright bg-light">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -28,11 +29,11 @@
                 </div>
                 <hr>
             </div>
-
         </div>
+        
     </div>
        
-       <div class="summary-container col-lg-4 border">
+       <div class="summary-container card col-lg-4 border">
            
         <h4>Do zapłaty</h4>
         <div>
@@ -52,7 +53,7 @@
             <strong class="alignright">--cena--</strong>
         </div>
         <div style="clear: both;"></div> 
-        <button type="button" class="btn btn-primary btn-square-md w-100 rounded-0 checkout" 
+        <button type="button" [routerLinkActive]="['link-active']" [routerLink]="['/product-order']" class="btn btn-primary btn-square-md w-100 rounded-0 checkout" 
             button-action="checkout" type="submit">Przejdź do kasy</button>
     </div>
 
