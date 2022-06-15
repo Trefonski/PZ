@@ -121,7 +121,7 @@ inputs .form-control{
   min-width: 300px;
   min-height: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 10;
   transform:translateX(-75.6%);
   text-align: center;
 }
@@ -262,7 +262,7 @@ nav li:hover .menu-sub {
 }
 @media screen and (max-width: 991px) {
 
-  menu-sub {
+  .menu-sub {
     display: none;
     opacity: 0;
     visibility: hidden;
@@ -274,4 +274,7 @@ nav li:hover .menu-sub {
     visibility: hidden;
   }
   
+}
+.bi-search{
+  color: white;
 }
