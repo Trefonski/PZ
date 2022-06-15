@@ -5,6 +5,9 @@ namespace PZ.Models
         public enum SexType { none=0,mens=1, womens=2, unisex=3, boy=4, girl=5, unisexChild=6 }
 
         public string ID_Item {get; set;}
+        public float NettPrice {get; set;}
+        public float VAT {get; set;}
+        public float Discount {get; set;}
         public uint ID_Brand {get; set;}
         public float Size {get; set;} //restrict values from 14 to 49.5 with 0.5 step
         public string Colour {get; set;}
