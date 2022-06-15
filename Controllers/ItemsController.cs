@@ -4,7 +4,6 @@ using PZ.Models;
 
 namespace PZ.Controllers
 {
-    [Route("[controller]")]
     public class ItemsController : Controller
     {
         private readonly AppDbContext _context;
@@ -30,6 +29,7 @@ namespace PZ.Controllers
             if(String.IsNullOrWhiteSpace(ID_Item))
             {
                 query = query.Where(x => x.ID_Item.Equals(ID_Item));
+                query = query.Include(x => x.Pictures);
             }
 
             List<Items> orders = await query.ToListAsync();
@@ -37,21 +37,25 @@ namespace PZ.Controllers
             return orders;
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsAllJson()
         {
             return Json(await GetItems());
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsBySexJson(Items.SexType Sex)
         {
             return Json(await GetItems(Sex));
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetItemsBySexAndStyleJson(Items.SexType Sex,string Style)
         {
             return Json(await GetItems(Sex,Style));
         }
 
+        [HttpGet]
         public async Task<ActionResult> GetSingleItemJson(string ID_Item)
         {
             return Json((await GetItems(0,"",ID_Item)).FirstOrDefault());

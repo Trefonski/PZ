@@ -16,5 +16,26 @@
             </li>
           </ul>
     
+</div>
 
+<div class="side-nav-second">
+
+  <label>Mój profil</label>
+
+
+      <ul class="row side-nav-list">
+          <li class="col" [routerLinkActive]="['link-active']">
+            <button class="btn btn-primary active" [routerLink]="['/orders']">Zamówienia</button>
+          </li>
+          <li class="col" [routerLinkActive]="['link-active']">
+            <button class="btn btn-primary active" [routerLink]="['/user-data']">Moje dane</button>
+          </li>
+          <li class="col" [routerLinkActive]="['link-active']">
+            <button class="btn btn-primary" [routerLink]="['/addresses']">Moje adresy</button>
+          </li>
+          <li class="col" [routerLinkActive]="['link-active']">
+            <button class="btn btn-primary active" [routerLink]="['/returns']">Zwroty</button>
+          </li>
+        </ul>
+  
 </div>

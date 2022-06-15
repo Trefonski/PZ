@@ -1,0 +1,83 @@
+<div class="row mt-4">
+    <div class="col-md-3 col-sm-5">
+    <app-side-nav></app-side-nav>
+    </div>
+  
+    <div class="container col-md-9 col-sm-7 ">
+      <h1>Dodaj adres</h1>
+
+      <div class="container mt-4">
+      <form>
+        <div class="row mt-2">
+          <div class="col-6">
+            <div class="form-group">
+                <label>Miasto</label>
+                <input class="form-control input-lg" />
+
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label>Województwo</label>
+              <input type="text" class="form-control input-lg" />
+           </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-6">
+          <div class="form-group">
+              <label>Kodu pocztowy</label>
+              <input class="form-control input-lg" />
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label>Ulica</label>
+            <input type="text" class="form-control input-lg" />
+         </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-6">
+        <div class="form-group">
+            <label>Numer bloku</label>
+            <input class="form-control input-lg" />
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="form-group">
+          <label>Number domu</label>
+          <input type="text" class="form-control input-lg" />
+       </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+
+  <div class="form-check ms-3 mt-3">
+    <input class="form-check-input " type="checkbox" value="" id="flexCheckChecked" checked>
+    <label class="form-check-label" for="flexCheckChecked">
+     Domyślny adres
+  </label>
+</div>
+  </div>
+    
+                  
+    <div class="row mt-4">
+        <div class="col-6">
+          <button class="btn btn-delete-address m-1 mb-2 active btn-square-md w-100 rounded-0">Zapis</button>
+        </div>
+            <div class="col-6">
+               <button class="btn btn-edit-address m-1 mb-2 active btn-square-md w-100 rounded-0" [routerLinkActive]="['link-active']"
+                [routerLink]="['/addresses']">Wróć</button>
+            </div>
+         </div>
+    </form>
+  </div>
+             
+  </div>
+      
+  </div>

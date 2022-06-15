@@ -1,0 +1,56 @@
+.btn-add-address{
+    background-color: black;
+    border: none;
+    color: white;
+    min-height: 40px;
+    font-weight: 500;
+    min-width: 200px;
+    max-width: 200px;
+}
+.btn-add-address:hover{
+    background-color: #0a4868;
+}
+.row{
+ align-items: flex-start;
+}
+ .btn-delete-address{
+      color: white;
+      background-color: black;
+      
+    }
+    .btn-delete-address:hover{
+      background-color: #444749;
+    }
+    .btn-edit-address{
+      color: white;
+      background-color: black;
+      
+    }
+    .btn-edit-address:hover{
+      background-color: #528eac;
+    }
+
+  .form-control{
+  padding:10px;
+  border:2px solid;
+}
+.form-control:focus{
+  box-shadow: 0px 5px 2px 4px #5cc4a1;
+}
+.form-group > label{
+  padding-left: 5px;
+  padding-right: 5px;
+  position:relative;
+  top:12px;
+  left:20px;
+  background-color:white;
+}
+
+
+.form-check-input{
+  border-radius: 0;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  box-shadow: none;
+}

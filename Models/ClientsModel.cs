@@ -1,6 +1,6 @@
 namespace PZ.Models
 {
-public class Clients 
+    public class Clients
     {
         public uint ID_Client {get; set;}
         public string Login {get; set;}

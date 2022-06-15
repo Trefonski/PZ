@@ -52,14 +52,14 @@ export class RegisterComponent implements OnInit {
     const formValues = { ...registerFormValue };
 
     const user: UserForRegistration = {
-      firstName: formValues.firstName,
-      lastName: formValues.lastName,
-      email: formValues.email,
-      password: formValues.password,
-      confirmPassword: formValues.confirm
+      FirstName: formValues.firstName,
+      LastName: formValues.lastName,
+      UserName: formValues.email,
+      Password: formValues.password,
+      ConfirmPassword: formValues.confirm
     };
 
-    this.authService.registerUser("api/accounts/registration", user)
+    this.authService.registerUser("api/auth/registration", user)
     .subscribe({
       next: (_) => this.router.navigate(["/authentication/login"]),
       error: (err: HttpErrorResponse) => {

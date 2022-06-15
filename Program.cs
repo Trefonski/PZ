@@ -1,8 +1,11 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PZ;
+using PZ.Models;
+using PZ.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +43,9 @@ builder.Services.AddCors(options =>
 string connStr = "Host=localhost;Port=5432;Database=PZ;UserID=pzaccess;Password=ZAQ!2wsx";
 // Add database connection
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connStr));
+builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+builder.Services.AddScoped<ClientsService,ClientsService>();
 
 var app = builder.Build();
 

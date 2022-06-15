@@ -4,6 +4,8 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 @Component({
   selector: 'app-add-address',
   templateUrl: './user-add-address.component.html',
+  styleUrls: ['./user-add-address.component.css']
+
 
 })
 export class UserAddAddressComponent {

@@ -7,23 +7,43 @@
     <h1>Adresy</h1>
     <p>Dodaj lub zmień adres</p>
     <div class="row">
-      <button class="btn btn-add-address mt-2 ms-1 active" [routerLink]="['/add-address']" [routerLinkActive]="['link-active']">Dodaj adres</button>
+      <button class="btn btn-add-address mt-2 ms-1 active btn-square-md w-100 rounded-0" [routerLinkActive]="['link-active']" [routerLink]="['/add-address']" >Dodaj adres</button>
     </div>
     <div class="row">
-      <!--
-        <div *ngFor="let addres of addresses" class="col-lg-3 mt-3 mx-2 border">
-          <strong>Adres zamieszkania</strong>
-          <br><br>
-          
-          <p>{{ addresses.blockno }}</p>
-          <p>{{ addresses.houseno }}</p>
-          <p>{{ addresses.postcode }}</p>
-          <p>{{ addresses.city }}</p>
-          <p>{{ addresses.voivodeship }}</p>
-          <p>{{ addresses.country }}</p>
-          
+ 
+        <div  class="col-lg-4 col-md-6 mt-5">
+          <div class="card m-2">
+            <div class="container">
+          <strong><h5 class="pt-2">Adres zamieszkania</h5></strong>
+          <br>
+          <h3>--Imie--</h3>
+          <h3 class="mb-2">--nazwisko--</h3>
+          <p>{{ addresses.blockno </p>
+          <p>{{ addresses.houseno </p>
+          <p>{{ addresses.postcode </p>
+          <p>{{ addresses.city </p>
+          <p>{{ addresses.voivodeship </p>
+          <p>{{ addresses.country </p>
+            <div class="row mt-4">
+              <div class="col-6">
+              <button class="btn btn-delete-address m-1 mb-2 active btn-square-md w-100 rounded-2">Usuń</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-edit-address m-1 mb-2 active btn-square-md w-100 rounded-2">Edytuj</button>
+            </div>
+            </div>
+          </div>
+        </div>
         </div> 
-        -->
+        
+        
+        
       </div>
+
+      
+      
+   
+
     </div>
 </div>
+
