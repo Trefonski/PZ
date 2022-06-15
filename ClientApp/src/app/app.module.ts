@@ -23,6 +23,7 @@ import { ItemsViewComponent } from './items-view/items-view.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductOrderComponent  } from './product-order/product-order.component';
 
 export function tokenGetter():string {
   return localStorage.getItem("token") || '';
@@ -47,6 +48,7 @@ export function tokenGetter():string {
     ItemDetailsComponent,
     CartComponent,
     FooterComponent,
+    ProductOrderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -66,13 +68,14 @@ export function tokenGetter():string {
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
       { path: 'addresses', component: UserAddressesComponent, canActivate: [AuthGuard]},
-      { path: 'add-addresses', component: UserAddAddressComponent, canActivate: [AuthGuard]},
+      { path: 'add-address', component: UserAddAddressComponent, canActivate: [AuthGuard]},
       { path: 'orders', component: UserOrdersComponent, canActivate: [AuthGuard] },
       { path: 'user-data', component: UserDataComponent, canActivate: [AuthGuard] },
       { path: 'items', component: ItemsViewComponent },
       { path: 'item-details/:id', component: ItemDetailsComponent },
       //{ path: 'returns', component: UserReturnsComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'product-order', component: ProductOrderComponent },
     ])
   ],
   providers: [],
