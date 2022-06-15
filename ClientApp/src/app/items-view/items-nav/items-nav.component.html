@@ -1,6 +1,7 @@
 <div class="container side-nav">
-    <label>Kategorie</label>
-
+  <div class="row bg-light">
+    <label >Kategorie</label>
+  </div>
         <ul class="navbar-nav side-nav-list">
             <li class="nav-item" [routerLinkActive]="['link-active']">
               <a class="nav-link active" [routerLink]="['/#']">Sneakersy</a>
@@ -9,11 +10,136 @@
               <a class="nav-link active" [routerLink]="['/#']">Obuwie sportowe</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link active" [routerLink]="['/']">Buty3</a>
+              <a class="nav-link active" [routerLink]="['/#']">Buty3</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link active" [routerLink]="['/#']">Buty4</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link active" [routerLink]="['/#']">Buty4</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['link-active']">
               <a class="nav-link active" [routerLink]="['/#']">Buty4</a>
             </li>
           </ul>
+
+
+          <div class="row bg-light mt-2">
+            <label>Marki</label>
+          </div>
+          <div class="row mt-2 scroll ms-1">
+            
+            <ul class="navbar-nav side-nav-list">
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">4F</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">addidas</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">Asics</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/']">Boss</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">Bates</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">Converse</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">Reebok</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link active" [routerLink]="['/#']">Skechers</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="row bg-light mt-4">
+            <label>Cena</label>
+          </div>
+          <div class="row">
+            
+      <div class="row mt-2">
+        <div class="col-6">
+          <div class="form-group">
+              <label>Od</label>
+              <input class="form-control input-lg" />
+          </div>
+        </div>
+        
+        <div class="col-6">
+          <div class="form-group">
+            <label>Do</label>
+            <input type="text" class="form-control input-lg" />
+         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="button-filter me-1">
+    <button class="btn btn-filter mt-4 mb-4 me-2 active btn-square-md w-100 rounded-0">Filtruj</button>
+  </div>
+
+  <div class="row bg-light mt-2">
+    <label>Kolor</label>
+  </div>
+  <div class="row mt-2 scroll ms-1">
+    
+    <ul class="navbar-nav side-nav-list">
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square black"></i> czarny </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square brown"></i> brązowy</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square grey"></i> szary</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/']"><i class="bi bi-caret-left-square beige"></i> beżowy</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/']"><i class="bi bi-caret-left-square white"></i> biały</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square blue"></i> niebieski</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square green"></i> zielony</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square yellow"></i> żółty</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square orange"></i> pomarańczowy</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square red"></i> czerwony</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square pink"></i> różowy</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square purple"></i> fioletowy</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square gold"></i> złoty</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link active" [routerLink]="['/#']"><i class="bi bi-caret-left-square silver"></i> srebrny</a>
+      </li>
+    </ul>
+  </div>
+  
+
+  <div class="me-1">
+    <button class="btn btn-filter mt-5 mb-4 me-2 active btn-square-md w-100 rounded-0">Filtruj</button>
+  </div>
+
 </div>
 
