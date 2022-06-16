@@ -8,10 +8,12 @@ import { AuthenticationService } from '../shared/services/authentication.service
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
-  public isUserAuthenticated: boolean = false;
+  public isUserAuthenticated: boolean;
   isExpanded = false;
 
-  constructor(private authService: AuthenticationService,private router: Router) { }
+  constructor(private authService: AuthenticationService,private router: Router) { 
+    this.isUserAuthenticated = this.authService.isUserAuthenticated();
+  }
 
   ngOnInit(): void {
     this.authService.authChanged.subscribe(res => {

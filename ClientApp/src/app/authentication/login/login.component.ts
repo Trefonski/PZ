@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
        localStorage.setItem("token", res.token);
        this.authService.sendAuthStateChangeNotification(res.isAuthSuccessful);
        if(this.authService.isUserAdmin()) {
-        this.router.navigate(['admin-dashboard']);
+        this.router.navigate(['admin/admin-dashboard']);
        } else {
         this.router.navigate([this.returnUrl]);
        }

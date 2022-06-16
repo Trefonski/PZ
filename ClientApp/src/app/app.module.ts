@@ -8,8 +8,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
-import { AdminDashboardTileComponent } from './admin/dashboard-tile/admin-dashboard-tile.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { SideNavMenuComponent } from './user-profile/side-nav-menu/side-nav-menu.component';
@@ -35,8 +33,6 @@ export function tokenGetter():string {
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    AdminDashboardComponent,
-    AdminDashboardTileComponent,
     SideNavMenuComponent,
     UserAddressesComponent,
     UserAddAddressComponent,
@@ -64,9 +60,9 @@ export function tokenGetter():string {
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
+      { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
       { path: 'addresses', component: UserAddressesComponent, canActivate: [AuthGuard]},
       { path: 'add-address', component: UserAddAddressComponent, canActivate: [AuthGuard]},
       { path: 'orders', component: UserOrdersComponent, canActivate: [AuthGuard] },
