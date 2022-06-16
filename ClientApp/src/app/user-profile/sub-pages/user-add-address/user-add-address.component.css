@@ -1,3 +1,4 @@
+
 .btn-add-address{
     background-color: black;
     border: none;
@@ -53,4 +54,7 @@
   border-color: black;
   border-width: 2px;
   box-shadow: none;
+}
+.container{
+  margin-bottom: 70px;
 }
