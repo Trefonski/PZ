@@ -6,7 +6,7 @@
       <div class="dropdown">
         <button class="btn btn-md dropbtn btn-1" [routerLinkActive]="['link-active']" [routerLink]="['/user-data']">Profil</button>
         <div class="dropdown-content border">
-          <section *ngIf="!isLogged">
+          <section *ngIf="!isUserAuthenticated">
             <button class="btn btn-dropdown" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/login']">Zaloguj się</button>
             <p>Jesteś nowym klientem?</p>
             <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/register']">Zarejestruj się</a>
@@ -30,6 +30,10 @@
               <a class="active" [routerLink]="['/']">Pomoc</a>
             </li>
           </ul>
+          <section class="mb-2" *ngIf="isUserAuthenticated">
+            <div class="dropdown-divider"></div>
+            <a class="active" (click)="logout()">Wyloguj się</a>
+          </section>
         </div>
       </div>
 

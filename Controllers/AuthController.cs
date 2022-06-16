@@ -51,11 +51,11 @@ namespace PZ.Controllers
             if(loginResult.Succeeded)
             {
                 var signingCredentials = _jwtHandler.GetSigningCredentials();
-                var claims = _jwtHandler.GetClaims(user);
-                var tokenOptions = _jwtHandler.GenerateTokenOptions(signingCredentials, claims);
+                var claims = await _jwtHandler.GetClaims(user);
+                var tokenOptions = _jwtHandler.GenerateTokenOptions(signingCredentials,claims);
                 var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
-                return Ok(new AuthResponse { Token = token });
+                return Ok(new AuthResponse { IsAuthSuccessful = true, Token = token });
             }
 
             return Unauthorized();
@@ -87,6 +87,8 @@ namespace PZ.Controllers
                         
                 return BadRequest(errors); 
             }
+
+            await _userManager.AddToRoleAsync(user, "Client");
 
             return Ok(); 
         }

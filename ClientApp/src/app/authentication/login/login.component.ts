@@ -55,7 +55,11 @@ export class LoginComponent implements OnInit {
       next: (res:AuthResponse) => {
        localStorage.setItem("token", res.token);
        this.authService.sendAuthStateChangeNotification(res.isAuthSuccessful);
-       this.router.navigate([this.returnUrl]);
+       if(this.authService.isUserAdmin()) {
+        this.router.navigate(['admin-dashboard']);
+       } else {
+        this.router.navigate([this.returnUrl]);
+       }
     },
     error: (err: HttpErrorResponse) => {
       this.errorMessage = err.message;

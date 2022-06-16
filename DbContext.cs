@@ -21,6 +21,8 @@ namespace PZ
         {
             base.OnModelCreating(builder);
 
+            builder.ApplyConfiguration(new RoleConfiguration());
+
             #region Addresses
                 builder.Entity<Addresses>().HasKey(t => new {t.ID_Address, t.ID_Client});
                 builder.Entity<Addresses>().HasOne(t => t.Clients)

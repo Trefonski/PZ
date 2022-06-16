@@ -43,7 +43,9 @@ builder.Services.AddCors(options =>
 string connStr = "Host=localhost;Port=5432;Database=PZ;UserID=pzaccess;Password=ZAQ!2wsx";
 // Add database connection
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connStr));
-builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<AppUser,IdentityRole>(options => {
+    options.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 builder.Services.AddScoped<ClientsService,ClientsService>();
 builder.Services.AddScoped<JwtHandler,JwtHandler>();
