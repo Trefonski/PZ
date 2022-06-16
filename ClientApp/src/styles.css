@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 /* Provide sufficient contrast against white background */
 a {
@@ -18,4 +20,8 @@ code {
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+.ag-root-wrapper-body.ag-layout-normal {
+  height: auto;
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PZ.Models;
@@ -20,19 +21,19 @@ namespace PZ.Controllers
             {
                 query = query.Where(x => x.Sex == Sex);
 
-                if(String.IsNullOrWhiteSpace(Style))
+                if(!String.IsNullOrWhiteSpace(Style))
                 {
                     query = query.Where(x => x.Style.Equals(Style));
                 }
             }
 
-            if(String.IsNullOrWhiteSpace(ID_Item))
+            if(!String.IsNullOrWhiteSpace(ID_Item))
             {
                 query = query.Where(x => x.ID_Item.Equals(ID_Item));
                 query = query.Include(x => x.Pictures);
             }
 
-            List<Items> orders = await query.ToListAsync();
+            List<Items> orders = await query.Include(x => x.Brands).ToListAsync();
 
             return orders;
         }
@@ -62,6 +63,7 @@ namespace PZ.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles="Administrator,Manager")]
         public async Task<ActionResult> InsertItem(Items item)
         {
             if(item.ID_Brand == 0)

@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace PZ.Models
 {
     public class Brands
@@ -6,6 +8,7 @@ namespace PZ.Models
         public string BrandName {get; set;}
 
         //FK target
+        [JsonIgnore]
         public List<Items> Items {get; set;}
     }
 }
