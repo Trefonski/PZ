@@ -1,6 +1,7 @@
-<div class="card">
+<div class="back-ground border">
+  <div class="card">
     <div class="card-body">
-      <h1 class="card-title">Register</h1>
+      <h1 class="card-title">Rejestracja</h1>
   
       <div *ngIf="showError" class="alert alert-danger" role="alert">
         <span [innerHTML]="errorMessage"></span>
@@ -8,52 +9,57 @@
   
       <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
         <div class="mb-3 row">
-          <label for="firstName" class="col-form-label col-sm-2">First Name:</label>
-          <div class="col-md-5">
+          <div class="col">
+            <label for="firstName" class="col-form-label">Imię</label>
             <input type="text" id="firstName" formControlName="firstName" class="form-control" />
           </div>
         </div>
+
         <div class="mb-3 row">
-          <label for="lastName" class="col-form-label col-sm-2">Last Name:</label>
-          <div class="col-md-5">
+          <div class="col">
+            <label for="lastName" class="col-form-label">Nazwisko</label>
             <input type="text" id="lastName" formControlName="lastName" class="form-control" />
           </div>
         </div>
+
         <div class="mb-3 row">
-          <label for="email" class="col-form-label col-sm-2">Email:</label>
-          <div class="col-md-5">
+          <div class="col">
+            <label for="email" class="col-form-label">Email:</label>
             <input type="email" id="email" formControlName="email" class="form-control" />
-          </div>
-          <div class="col-md-5">
-            <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
-            <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+        </div>
+
+          <div>
+            <em *ngIf="validateControl('email') && hasError('email', 'email')">Podaj pełny adres e-mail</em>
+            <em *ngIf="validateControl('email') && hasError('email', 'required')">Email jest wymagany</em>
           </div>
         </div>
+
         <div class="mb-3 row">
-          <label for="password" class="col-form-label col-sm-2">Password:</label>
-          <div class="col-md-5">
+          <div class="col">
+            <label for="password" class="col-form-label">Hasło</label>
             <input type="password" id="password" formControlName="password" class="form-control" />
           </div>
-          <div class="col-md-5">
-            <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+          <div>
+            <em *ngIf="validateControl('password') && hasError('password', 'required')">Hasło jest wymagane</em>
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="confirm" class="col-form-label col-sm-2">Confirm Password:</label>
-          <div class="col-md-5">
+          <div class="col">
+            <label for="confirm" class="col-form-label">Powtóż hasło</label>
             <input type="password" id="confirm" formControlName="confirm" class="form-control" />
           </div>
-          <div class="col-md-5">
-            <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Confirmation is required</em>
-            <em *ngIf="hasError('confirm', 'mustMatch')">Passwords must match</em>
+          <div>
+            <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">To pole jest wymagane</em>
+            <em *ngIf="hasError('confirm', 'mustMatch')">Hasła muszą być takie same</em>
           </div>
         </div>
         <br>
         <div class="mb-3 row">
-          <div class="col-md-1">
-            <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Register</button>
+          <div class="col">
+            <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Zarejestruj</button>
           </div>
         </div>
       </form>
     </div>
   </div>
+</div>
