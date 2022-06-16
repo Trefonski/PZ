@@ -14,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add authentication
 // Using JSON Web Tokens
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -24,11 +26,9 @@ builder.Services.AddAuthentication(options => {
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            // TODO: URL and port config
-            ValidIssuer = "https://localhost:5100",
-            ValidAudience = "https://localhost:5100",
-            // TODO: secret key config
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretkeymustbelong"))
+            ValidIssuer = jwtSettings["validIssuer"],
+            ValidAudience = jwtSettings["validAudience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.GetSection("securityKey").Value))
         };
 });
 builder.Services.AddControllersWithViews();
@@ -46,6 +46,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connStr
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 builder.Services.AddScoped<ClientsService,ClientsService>();
+builder.Services.AddScoped<JwtHandler,JwtHandler>();
 
 var app = builder.Build();
 

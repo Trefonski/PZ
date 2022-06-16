@@ -17,45 +17,45 @@ namespace PZ.Controllers
     {
         private readonly ClientsService _clientsService;
         private readonly AppDbContext _context;
+        private readonly JwtHandler _jwtHandler;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
 
-        public AuthController(AppDbContext context,SignInManager<AppUser> signInManager,UserManager<AppUser> userManager,ClientsService clientsService)
+        public AuthController(AppDbContext context,SignInManager<AppUser> signInManager,UserManager<AppUser> userManager,ClientsService clientsService,JwtHandler jwtHandler)
         {
             _clientsService = clientsService;
             _context = context;
+            _jwtHandler = jwtHandler;
             _signInManager = signInManager;
             _userManager = userManager;
         }
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel user)
+        public async Task<IActionResult> Login([FromBody] LoginModel userForAuthentication)
         {
-            if (user is null)
+            if(userForAuthentication is null)
             {
                 return BadRequest("Invalid client request");
             }
 
-            var loginResult = await _signInManager.PasswordSignInAsync(user.UserName,user.Password,false,lockoutOnFailure: true);
+            var user = await _userManager.FindByNameAsync(userForAuthentication.UserName);
 
-            Console.WriteLine(loginResult);
+            if(user == null || !await _userManager.CheckPasswordAsync(user,userForAuthentication.Password))
+            {
+                return Unauthorized("Invalid Authentication");
+            }
+
+            var loginResult = await _signInManager.PasswordSignInAsync(user.UserName,userForAuthentication.Password,false,lockoutOnFailure: true);
 
             if(loginResult.Succeeded)
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretkeymustbelong"));
-                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var tokeOptions = new JwtSecurityToken(
-                    issuer: "https://localhost:5100",
-                    audience: "https://localhost:5100",
-                    claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(5),
-                    signingCredentials: signinCredentials
-                );
+                var signingCredentials = _jwtHandler.GetSigningCredentials();
+                var claims = _jwtHandler.GetClaims(user);
+                var tokenOptions = _jwtHandler.GenerateTokenOptions(signingCredentials, claims);
+                var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-
-                return Ok(new AuthResponse { Token = tokenString });
+                return Ok(new AuthResponse { Token = token });
             }
 
             return Unauthorized();
