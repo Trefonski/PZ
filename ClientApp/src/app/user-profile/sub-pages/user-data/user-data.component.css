@@ -24,3 +24,6 @@
   .btn-edit-user:hover{
     background-color: #528eac;
   }
+  .container{
+    margin-bottom:80px;
+  }
