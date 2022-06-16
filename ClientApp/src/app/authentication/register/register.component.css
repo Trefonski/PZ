@@ -1,0 +1,71 @@
+
+.form-control:focus{
+  box-shadow: 0px 5px 2px 4px #5cc4a1;
+}
+
+.col-form-label{
+  padding-left: 5px;
+  padding-right: 5px;
+  position:relative;
+  top:12px;
+  left:20px;
+  background-color:white;
+}
+
+.form-check-input{
+
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  box-shadow: none;
+}
+
+.form-control{
+  padding:10px;
+  border:2px solid;
+}
+.btn-info{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+  background-color: #0087ca;
+  width: 100%;
+}
+
+.card{
+  margin-top: 4%;
+  margin-left: 32%;
+  margin-right: 32%;
+}
+.container{
+  padding-bottom: 0px;
+}
+
+@media screen and (max-width: 991px) {
+  .card{
+      margin-top: 13%;
+      margin-left: 18%;
+      margin-right: 18%;
+  
+  }
+  .back-ground{
+
+      width: 100vw;
+      height: 90vh;
+}
+}
+
+.back-ground{
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+  background: linear-gradient(120deg,#5cc4a1, #1f5f41);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+}
