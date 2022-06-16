@@ -1,0 +1,98 @@
+<div class="modal-header">
+    <h4 class="modal-title">Dodawanie produktu</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="itemForm" autocomplete="on" novalidate (ngSubmit)="addItem(itemForm.value)">
+        <div class="mb-3 row">
+          <div class="col-6">
+            <label for="ID_item" class="col-form-label">Identyfikator produktu</label>
+            <input type="text" id="ID_item" formControlName="ID_item" class="form-control" />
+          </div>
+
+          <div class="col-6">
+            <label for="ID_brand" class="col-form-label">Marka</label>
+            <select id="ID_brand" formControlName="ID_brand" class="form-control">
+                <option value="">Wybierz markę</option>
+                <option *ngFor="let brand of brandsList" [ngValue]="brand.iD_Brand">
+                    {{ brand.brandName }}
+                </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="itemName" class="col-form-label">Nazwa</label>
+                <input type="itemName" id="itemName" formControlName="itemName" class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label for="style" class="col-form-label">Rodzaj</label>
+                <input type="text" id="style" formControlName="style" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="sex" class="col-form-label">Płeć</label>
+                <select type="text" id="sex" formControlName="sex" class="form-control">
+                    <option value="">Wybierz płeć</option>
+                    <option *ngFor="let sex of sexDictionary" [ngValue]="sex.ID">
+                        {{ sex.Name }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-6">
+                <label for="colour" class="col-form-label">Kolor</label>
+                <input type="text" id="colour" formControlName="colour" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="size" class="col-form-label">Rozmiar</label>
+                <input type="number" step=".1" id="size" formControlName="size" class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label for="stock" class="col-form-label">Stan magazynowy</label>
+                <input type="number"  step="1" id="stock" formControlName="stock" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="nettPrice" class="col-form-label">Cena bazowa</label>
+                <input type="number" step=".01" id="nettPrice" formControlName="nettPrice" class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label for="vat" class="col-form-label">Stawka VAT</label>
+                <input type="number"  step=".1" id="vat" formControlName="vat" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="discount" class="col-form-label">Rabat</label>
+                <input type="number" step=".1" id="discount" formControlName="discount" class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label for="finalPrice" class="col-form-label">Końcowa cena</label>
+                <input type="number" id="finalPrice" class="form-control" [disabled]="true"/>
+            </div>
+        </div>
+        <br>
+        <div class="mb-3 row">
+          <div class="col">
+            <button type="submit" class="btn btn-success" [disabled]="!itemForm.valid">Dodaj produkt</button>
+          </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Zamknij</button>
+</div>

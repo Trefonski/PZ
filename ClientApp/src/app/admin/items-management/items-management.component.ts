@@ -5,11 +5,14 @@ import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import { AgGridAngular } from 'ag-grid-angular';
 import { EnumTranslatorService } from 'src/app/shared/services/enum-tranlator.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ItemAddModalComponent } from '../item-add-modal/item-add-modal.component';
 
 @Component({
   templateUrl: './items-management.component.html'
 })
 export class ItemsManagementComponent {
+  public brandsList:any[] = [];
   public itemsList:any[] = [];
   public selectedItem:any;
 
@@ -36,9 +39,8 @@ export class ItemsManagementComponent {
 
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
 
-  constructor(private http: HttpClient,private envUrl: EnvironmentUrlService, private enumTranslator: EnumTranslatorService) {
-
-
+  constructor(private http: HttpClient,private envUrl: EnvironmentUrlService, private enumTranslator: EnumTranslatorService,private modalService: NgbModal) {
+    this.getBrands();
   }
 
   onGridReady(params: GridReadyEvent) {
@@ -50,6 +52,11 @@ export class ItemsManagementComponent {
     console.log('cellClicked', e);
   }
   
+  public addItem() {
+    const modalRef = this.modalService.open(ItemAddModalComponent);
+    modalRef.componentInstance.brandsList = this.brandsList;
+  }
+
   public createItem() {
 
   }
@@ -58,6 +65,12 @@ export class ItemsManagementComponent {
     this.http.get<any[]>(`${this.envUrl.urlAddress}/Items/GetAllItemsJson`).subscribe(result => {
         this.itemsList = result;
       }, error => console.error(error));
+  }
+
+  public getBrands() {
+    this.http.get<any[]>(`${this.envUrl.urlAddress}/Brands/GetBrandsAllJson`).subscribe(result => {
+      this.brandsList = result;
+    }, error => console.error(error));
   }
 
   public getItemDetails() {

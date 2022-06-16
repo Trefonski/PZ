@@ -22,6 +22,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductOrderComponent  } from './product-order/product-order.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function tokenGetter():string {
   return localStorage.getItem("token") || '';
@@ -57,6 +58,7 @@ export function tokenGetter():string {
         tokenGetter: tokenGetter
       }      
     }),
+    NgbModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },

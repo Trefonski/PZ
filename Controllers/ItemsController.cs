@@ -63,8 +63,8 @@ namespace PZ.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles="Administrator,Manager")]
-        public async Task<ActionResult> InsertItem(Items item)
+        //[Authorize(Roles="Administrator,Manager")]
+        public async Task<ActionResult> InsertItem([FromBody] Items item)
         {
             if(item.ID_Brand == 0)
             {
