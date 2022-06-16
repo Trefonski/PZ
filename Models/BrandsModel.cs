@@ -6,6 +6,6 @@ namespace PZ.Models
         public string BrandName {get; set;}
 
         //FK target
-        public Items Items {get; set;}
+        public List<Items> Items {get; set;}
     }
 }

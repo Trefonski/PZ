@@ -21,7 +21,7 @@ namespace PZ
         {
             base.OnModelCreating(builder);
 
-            builder.ApplyConfiguration(new RoleConfiguration());
+            //builder.ApplyConfiguration(new RoleConfiguration());
 
             #region Addresses
                 builder.Entity<Addresses>().HasKey(t => new {t.ID_Address, t.ID_Client});
@@ -99,9 +99,9 @@ namespace PZ
                 builder.Entity<Items>().HasMany(t => t.Pictures)
                 .WithOne(d => d.Items)
                 .OnDelete(DeleteBehavior.Restrict);
-                builder.Entity<Items>().HasOne(t => t.Brands) //https://www.entityframeworktutorial.net/efcore/configure-one-to-one-relationship-using-fluent-api-in-ef-core.aspx
-                .WithOne(d => d.Items)
-                .HasForeignKey<Items>(t => t.ID_Brand)
+                builder.Entity<Items>().HasOne(t => t.Brands)
+                .WithMany(d => d.Items)
+                .HasForeignKey(t => t.ID_Brand)
                 .HasConstraintName("FK_Items_Brands")
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
