@@ -1,12 +1,12 @@
 <!-- AG Grid Angular Component -->
-<button class="btn btn-success me-2" (click)="addItem()">Dodaj produkt</button>
-<button class="btn btn-danger me-2">Archiwizuj produkt</button>
-<button class="btn btn-secondary me-2">Edytuj produkt</button>
-<button class="btn btn-warning me-2">Pokazuj archiwalne produkty: wyłączone</button>
+<button class="btn btn-success me-2 mt-3" (click)="addItem()">Dodaj produkt</button>
+<button class="btn btn-danger me-2 mt-3">Archiwizuj produkt</button>
+<button class="btn btn-secondary me-2 mt-3">Edytuj produkt</button>
+<button class="btn btn-warning me-2 mt-3">Pokazuj archiwalne produkty: wyłączone</button>
 
 <ag-grid-angular
-   style="width: 100%; height: 100%"
-   class="ag-theme-alpine mt-1"
+   style="width: 100%; height: 100%;"
+   class="ag-theme-alpine my-4"
    [columnDefs]="columnDefs"
    [defaultColDef]="defaultColDef"
    [rowData]="rowData$ | async"
