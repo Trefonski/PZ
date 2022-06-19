@@ -11,7 +11,7 @@
             <p>Jesteś nowym klientem?</p>
             <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/authentication/register']">Zarejestruj się</a>
           </section>
-          <div class="dropdown-divider"></div>
+        
 
           <ul *ngIf="isUserAuthenticated">
             <li [routerLinkActive]="['link-active']">
@@ -32,7 +32,7 @@
           </ul>
           <section class="mb-2" *ngIf="isUserAuthenticated">
             <div class="dropdown-divider"></div>
-            <a class="active" (click)="logout()">Wyloguj się</a>
+            <a class="btn btn-dropdown active" (click)="logout()">Wyloguj się</a>
           </section>
         </div>
       </div>
