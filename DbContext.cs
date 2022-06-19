@@ -42,12 +42,7 @@ namespace PZ
                 .OnDelete(DeleteBehavior.Restrict);
                 builder.Entity<Clients>().HasMany(t => t.Orders)
                 .WithOne(d => d.Clients)
-                .OnDelete(DeleteBehavior.Restrict);
-                builder.Entity<Clients>().HasOne(t => t.AppUser)
-                .WithOne(d => d.Clients)
-                .HasPrincipalKey<Clients>(t => t.Login)
-                .HasForeignKey<AppUser>(t => t.UserName)
-                .OnDelete(DeleteBehavior.Restrict);    
+                .OnDelete(DeleteBehavior.Restrict);   
             #endregion
 
             #region Orders

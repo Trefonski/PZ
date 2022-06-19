@@ -10,6 +10,5 @@ namespace PZ.Models
         public List<Addresses> Addresses {get; set;}
         public List<Orders> Orders {get; set;}
         public List<Reviews> Reviews {get; set;}
-        public AppUser AppUser {get; set;}
     }
 }
