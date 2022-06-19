@@ -14,20 +14,20 @@
         <div class="col-6 col-lg-4 col-md-4 col-xs-4 my-2" *ngFor="let item of items">
 
             <div class="thumbnail-container m-1">
-                <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/item-details', item.ID_Item]">
-                    <img class="w-100" src="{{ item.Picture }}"/>
+                <a class="active" [routerLinkActive]="['link-active']" [routerLink]="['/item-details', item.iD_Item]">
+                    <img class="w-100" src=""/>
                  </a>
             <div class="row" style="padding-left: 10px;">
-                <p>{{ item.ItemName }}</p>  
+                <p>{{ item.itemName }}</p>  
             </div>
             <div class="row" style="padding-left: 10px;">
 
                 <div class="col-lg-9 col-md-7 col-sm-6">
-                    <p>{{item.Stock}}</p> 
+                    <p>{{item.nettPrice}},00 zł</p> 
                  </div>
 
                  <div class="col-lg-3 col-md-5 col-sm-6 ">
-                    <button type="button" class="btn btn-primary btn-square-md rounded-0 align-self-end add-to-cart">
+                    <button type="button" class="btn btn-primary btn-square-md rounded-0 align-self-end add-to-cart" (click)="addToCart()">
                         <i class="bi bi-bag-fill"></i>
                     </button>
                     </div>

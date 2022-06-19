@@ -18,8 +18,8 @@
         </div>
         <div class="col-lg-5 col-md-12 col-12 mt-3">
             <h6>--Przykład Marka--</h6>
-            <h3>--Przykład Nazwa--</h3>
-            <h2>199,00</h2>
+            <h3>{{item.itemName}}</h3>
+            <h2>{{item.nettPrice}},00 zł</h2>
 
             <select class="w-100 rounded-0">
                 <option disabled selected>Wybierz rozmiar</option>
@@ -30,7 +30,7 @@
             </select>
 
             <button type="button" class="btn btn-primary btn-square-md w-100 rounded-0 add-to-cart" 
-            button-action="add-to-cart" type="submit">Dodaj do koszyka</button>
+            (click)="addToCart()" type="submit">Dodaj do koszyka</button>
 
             <div class="border mt-5 p-4">
                 <h6 class="mb-3">Dostawa</h6>
