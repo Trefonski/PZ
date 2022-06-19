@@ -6,7 +6,8 @@ import { EnumTranslatorService } from "src/app/shared/services/enum-tranlator.se
 import { EnvironmentUrlService } from "src/app/shared/services/environment-url.service";
 
 @Component({
-    templateUrl: 'item-add-modal.component.html'
+    templateUrl: 'item-add-modal.component.html',
+    styleUrls: ['./item-add-modal.component.css']
   })
   export class ItemAddModalComponent implements OnInit {
     @Input() brandsList:any[] = [];
