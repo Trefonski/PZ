@@ -1,0 +1,7 @@
+div{
+    background-color: #0087ca;
+    color: white;
+}
+div:hover{
+    background-color: #719db3;
+}
