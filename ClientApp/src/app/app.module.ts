@@ -21,6 +21,7 @@ import { ItemsViewComponent } from './items-view/items-view.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { HelpComponent } from './user-profile/sub-pages/user-help/user-help.component';
 import { ProductOrderComponent  } from './product-order/product-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -46,6 +47,7 @@ export function tokenGetter():string {
     CartComponent,
     FooterComponent,
     ProductOrderComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -74,6 +76,7 @@ export function tokenGetter():string {
       //{ path: 'returns', component: UserReturnsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'product-order', component: ProductOrderComponent },
+      { path: 'help', component: HelpComponent}
     ])
   ],
   providers: [],
